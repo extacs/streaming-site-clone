@@ -1,2 +1,2 @@
 # streaming-site-clone
-"AWatch", a kind of a streaming site, but instead its a collection of shows (movies/series) based off my current watch list. It was my very first time trying out JS through React, so I had to use appwrite to handle a little backend.
+"AWatch", simple streaming site clone, but instead its a collection of shows (movies/series) based off my current watch list. It was my very first time trying out JS through React, so I had to use appwrite to handle a little backend.
