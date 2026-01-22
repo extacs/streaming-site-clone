@@ -1,2 +1,2 @@
-# streaming-site-clone
-- Simple streaming site clone, but instead its a collection of shows (movies/series) based off my current watch list. It was my very first time trying out JS through React, so I had to use appwrite to handle a little backend. I got curious about how API handling is done and how it functions and wanting to learn small backend interaction with a small DB. 
+# streaming-site-clone (discontinued)
+- Simple streaming site clone, everything are still on structuring phase. It was my very first time trying out JS through React, so I had to use appwrite to handle a little backend. I just got curious about how API handling is done and how it functions, for this I used API of TMDB. Also wanted to understand a bit of backend interaction. And ig those were sufficient enough to be welcoming entry-point. 

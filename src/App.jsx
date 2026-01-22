@@ -10,7 +10,7 @@ const API_BASE_URL = 'https://api.themoviedb.org/3'; // separate base url for cl
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY; 
 
-const API_OPTIONS = { // always check this section for type errors, as it should follow fetch's options
+const API_OPTIONS = { // 'TMDB' API_OPTIONS
     method: 'GET',
     headers: {
         accept: 'application/json',
@@ -40,7 +40,7 @@ const App = () => {
                 `${API_BASE_URL}/search/tv?query=${encodeURIComponent(query)}`       // Series :   1
             ]
             : [                                           
-                `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`,  
+                `${API_BASE_URL}//discover/movie?sort_by=popularity.desc`,  
                 `${API_BASE_URL}/discover/tv?sort_by=popularity.desc`       
             ];
             const responses = await Promise.all ( // multiple response fetching
@@ -74,10 +74,10 @@ const App = () => {
             setSeriesList(datas[0].results || []);
 
             if (query && datas[0].results.length > 0) { // idk why I made separate for the 2 (Movies & Series)
-                await updateSearchCount(query, datas[0].results[0], datas[1].results[0], true)
+                await updateSearchCount(query, datas[0].results[0], datas[1].results[0], true);
             }
             if (query && datas[1].results.length > 0) {
-                await updateSearchCount(query, datas[0].results[0], datas[1].results[0], false)
+                await updateSearchCount(query, datas[0].results[0], datas[1].results[0], false);
             }
         } catch (error) {
             console.error(`Error fetching shows: ${error}`);
