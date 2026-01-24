@@ -40,7 +40,7 @@ const App = () => {
                 `${API_BASE_URL}/search/tv?query=${encodeURIComponent(query)}`       // Series :   1
             ]
             : [                                           
-                `${API_BASE_URL}//discover/movie?sort_by=popularity.desc`,  
+                `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`,  
                 `${API_BASE_URL}/discover/tv?sort_by=popularity.desc`       
             ];
             const responses = await Promise.all ( // multiple response fetching
@@ -71,7 +71,7 @@ const App = () => {
             console.log(datas[0].results);
             
             setMovieList(datas[0].results || []);
-            setSeriesList(datas[0].results || []);
+            setSeriesList(datas[1].results || []);
 
             if (query && datas[0].results.length > 0) { // idk why I made separate for the 2 (Movies & Series)
                 await updateSearchCount(query, datas[0].results[0], datas[1].results[0], true);
@@ -113,7 +113,7 @@ const App = () => {
                     
                     <img src="./hero-img.png" alt="Banner" />
                     <h1>
-                        My Own Collection of <span className="movie-text-gradient">Movies</span> & <span className="shows-text-gradient">Series</span> I'll/'ve Watch/ed All For You
+                        Your Kind of <span className="movie-text-gradient">Movies</span>. <br />Your Kind of <span className="shows-text-gradient">Series</span>. <br /> All in One Place.
                     </h1>
 
                     <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
